@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20250127185433_RolesAdded")]
-    partial class RolesAdded
+    [Migration("20250202192841_CouponsAdded")]
+    partial class CouponsAdded
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -180,6 +180,9 @@ namespace Infrastructure.Migrations
                     b.Property<int>("DeliveryMethodId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
@@ -293,13 +296,13 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1b089e80-673d-48ae-974a-b917ec5b41ae",
+                            Id = "13138fb5-0493-4761-a042-03e135485d52",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "e3a34443-5b40-441e-ae31-bdbc7c2a5e28",
+                            Id = "0dbb7898-5174-4b9d-9237-70b235fc3ab3",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
